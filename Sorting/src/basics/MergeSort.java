@@ -1,4 +1,8 @@
+package basics;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSort {
     private static void mergeList(int[] nums, int start, int mid, int end) {
@@ -10,6 +14,8 @@ public class MergeSort {
 
         int i = start;
         while (l < lLen && r < rLen) {
+            // The check <= here makes Merge Sort stable as when same item is
+            // found in both arrays it will pick the one from the left.
             if (left[l] <= right[r]) nums[i++] = left[l++];
             else nums[i++] = right[r++];
         }
